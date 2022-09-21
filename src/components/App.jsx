@@ -1,18 +1,23 @@
-import { useState, useEffect } from 'react';
-// import './_app.scss';
-import * as API from '../services/api';
-import HeaderNav from './HeaderNav/HeaderNav';
 import { Routes, Route } from 'react-router-dom';
+import NotFound from './NotFound';
+import Home from 'components/Home/Home';
+import {NavItem} from './App.styled';
+import './_app.scss';
+import MovieInfo from './MovieInfo/MovieInfo'
 
 export const App = () => {
-
-  useEffect(() => {
-    API.getFetchFilms().then(console.log)
-  },[])
   return (
     <>
+    <nav className='HeaderNavPanel'>
+      <NavItem to="/">Home</NavItem>
+      <NavItem to="/movies">Movies</NavItem>
+    </nav>
       <Routes>
-        <Route path="/" element={<HeaderNav />}>
+        <Route path="/" element={<Home />}>
+          <Route path="/movies/:movieId" element={<MovieInfo />}>
+            
+          </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
