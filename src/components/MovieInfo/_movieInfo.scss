@@ -1,0 +1,26 @@
+.movieInfoContainer {
+    padding: 30px;
+    display: flex;
+    color: #fff;
+}
+
+.moviePoster {
+    display: block;
+    object-fit: cover;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.movieInfoBox {
+    margin: 20px 0 0 20px;
+
+    & h2 {
+        margin: 10px 0;
+    }
+}
+
+.movieInfoTitle {
+    margin-bottom: 30px;
+}
+
+

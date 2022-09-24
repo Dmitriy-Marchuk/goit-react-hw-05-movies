@@ -1,0 +1,27 @@
+.additionalBox {
+    padding: 30px;
+}
+
+.additionalTitle {
+    margin-bottom: 20px;
+}
+
+.additionalList {
+    display: flex;
+    margin-bottom: 30px;
+    & li {
+        &:last-child {
+            margin-left: 50px;
+        }
+    }
+}
+
+.additionalItem {
+    padding: 20px;
+    color: black;
+    text-decoration: underline;
+        &:hover {
+            color: orangered;
+            transition: ease-in-out 250ms;
+        }
+}

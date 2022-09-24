@@ -1,0 +1,23 @@
+.searchForm {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.searchInput {
+    width: 350px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.searchButton {
+    height: 30px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid transparent;
+    border-left: none;
+    outline: none;
+    background-color: white;
+}

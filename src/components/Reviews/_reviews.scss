@@ -1,0 +1,24 @@
+.reviewsList {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reviewsItem {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+
+    & h3 {
+        margin: 5px 0 15px 0;
+    }
+}
+
+.reviewsImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}

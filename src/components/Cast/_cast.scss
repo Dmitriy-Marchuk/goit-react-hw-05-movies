@@ -1,0 +1,23 @@
+.castList {
+   display: flex;
+   flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.castItem {
+    width: 200px;
+    margin: 5px 5px 15px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.castThumb {
+    padding: 5px;
+}
+
+.castName {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
