@@ -1,13 +1,16 @@
-import MovieAdditional from 'components/MovieAdditional/MovieAdditional';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, NavLink } from 'react-router-dom';
+import MovieAdditional from 'components/MovieAdditional/MovieAdditional';
 import * as API from '../../services/api';
 import './_movieInfo.scss';
 import CirclePercentage from 'components/CirclePercentage/CirclePercentage';
+import { BsArrowReturnLeft } from 'react-icons/bs';
 
 const MovieInfo = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
   const imageNotFound =
     'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930';
 
@@ -32,8 +35,6 @@ const MovieInfo = () => {
     backgroundRepeat: 'no-repeat',
   };
 
-  console.log(movie);
-
   const vote = (vote_average * 10).toFixed(0);
 
   return (
@@ -49,6 +50,9 @@ const MovieInfo = () => {
           alt={tagline}
         />
         <div className="movieInfoBox">
+          <NavLink className="backButton" to={backLinkHref}>
+            <BsArrowReturnLeft size={12} /> RETURN
+          </NavLink>
           <h1 className="movieInfoTitle">{title}</h1>
           <CirclePercentage className="circle" vote={vote} />
           <h2 className="movieOverview">Overview</h2>

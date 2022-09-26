@@ -1,6 +1,6 @@
-import { BsSearch } from 'react-icons/bs';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { BsSearch } from 'react-icons/bs';
 import './_searchBar.scss';
 
 const SearchBar = ({ onSubmit }) => {

@@ -15,6 +15,14 @@ const Cast = () => {
 
   console.log(cast);
 
+  if (cast.length === 0) {
+    return (
+      <>
+        <h1>No info!</h1>
+      </>
+    );
+  }
+
   return (
     <ul className="castList">
       {cast &&

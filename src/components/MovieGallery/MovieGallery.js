@@ -1,17 +1,19 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './_movieGallery.scss';
 
 const imageNotFound =
   'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930';
 
 const MovieGallery = ({ movies }) => {
+  const location = useLocation();
+
   return (
     <>
       <ul className="movieList">
         {movies &&
           movies.map(movie => (
             <li className="movieItem" key={movie.id}>
-              <NavLink to={`/movies/${movie.id}`}>
+              <NavLink to={`/movies/${movie.id}`} state={{ from: location }}>
                 <img
                   className="movieImage"
                   alt={movie.name ?? movie.title}

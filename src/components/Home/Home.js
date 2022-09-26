@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react';
 import './_home.scss';
 import MovieGallery from '../MovieGallery/MovieGallery';
 import * as API from '../../services/api';
-import { useState, useEffect } from 'react';
 
 const Home = () => {
   const [movieTrending, setMovieTrending] = useState('');

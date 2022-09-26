@@ -1,29 +1,29 @@
-import SearchBar from 'components/SearchBar/SearchBar';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import SearchBar from 'components/SearchBar/SearchBar';
 import * as API from '../../services/api';
 import MovieGallery from 'components/MovieGallery/MovieGallery';
 
 const Movies = () => {
-  const [searchName, setSearchName] = useState(null);
-  const [moviesFound, setMoviesFound] = useState(null);
+  const [moviesFound, setMoviesFound] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryParam = searchParams.get('query') ?? '';
 
   const onSubmit = query => {
-    setSearchName(query);
+    setSearchParams(query !== '' ? { query: query } : {});
   };
 
   useEffect(() => {
-    API.getMovieSearch(searchName).then(data => setMoviesFound(data.results));
-  }, [searchName]);
+    if (searchParams.get('query') !== null) {
+      API.getMovieSearch(queryParam).then(data => setMoviesFound(data.results));
+    }
+    setMoviesFound([]);
+  }, [searchParams, queryParam]);
 
   return (
     <>
-      <SearchBar onSubmit={onSubmit} searchName={searchName} />
-      {moviesFound &&
-        (moviesFound.length > 0 ? (
-          <MovieGallery movies={moviesFound} />
-        ) : (
-          <div>Films not found!</div>
-        ))}
+      <SearchBar queryParam={queryParam} onSubmit={onSubmit} />
+      {moviesFound && <MovieGallery movies={moviesFound} />}
     </>
   );
 };

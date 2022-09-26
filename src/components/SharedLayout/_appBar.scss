@@ -1,0 +1,28 @@
+.headerNavPanel {
+    &:after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid rgb(171, 183, 185);
+            height: 0px;
+            width: 5000px;
+            position: absolute;
+            left: -50%;
+        }
+}
+
+.navigation {
+    display: flex;
+}
+
+.mainContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.classLoader {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

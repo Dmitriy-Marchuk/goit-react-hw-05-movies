@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import './_movieAdditional.scss';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 const MovieAdditional = () => {
   return (
@@ -17,7 +19,9 @@ const MovieAdditional = () => {
           </NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<BeatLoader size={30} />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
