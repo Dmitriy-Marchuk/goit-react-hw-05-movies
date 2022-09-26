@@ -7,9 +7,13 @@ export const NavItem = styled(NavLink)`
   margin-right: 10px;
   color: black;
   font-size: 30px;
-  font-weight: 900;
 
   &.active {
     color: orangered;
+  }
+
+  :hover:not(.active) {
+    color: orangered;
+    transition: ease-in-out 250ms;
   }
 `;

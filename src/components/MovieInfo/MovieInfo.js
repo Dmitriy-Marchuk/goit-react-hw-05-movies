@@ -51,7 +51,7 @@ const MovieInfo = () => {
         />
         <div className="movieInfoBox">
           <NavLink className="backButton" to={backLinkHref}>
-            <BsArrowReturnLeft size={12} /> RETURN
+            <BsArrowReturnLeft size={12} /> GO BACK
           </NavLink>
           <h1 className="movieInfoTitle">{title}</h1>
           <CirclePercentage className="circle" vote={vote} />

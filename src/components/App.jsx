@@ -2,10 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-// import Home from 'components/Home/Home';
-// import MovieInfo from './MovieInfo/MovieInfo'
 import SharedLayout from './SharedLayout/SharedLayout'
-// import Movies from './Movies/Movies';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews'
 
