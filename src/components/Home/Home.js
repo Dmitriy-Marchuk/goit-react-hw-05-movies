@@ -9,6 +9,8 @@ const Home = () => {
     API.getMovieTrending().then(data => setMovieTrending(data.results));
   }, []);
 
+  console.log(movieTrending);
+
   return (
     <div>
       <h1 className="title">Trending today</h1>

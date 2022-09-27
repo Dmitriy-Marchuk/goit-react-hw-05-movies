@@ -10,7 +10,9 @@ const SharedLayout = () => {
     <div className="mainContainer">
       <header className="headerNavPanel">
         <nav className="navigation">
-          <NavItem to="/">Home</NavItem>
+          <NavItem end to="/">
+            Home
+          </NavItem>
           <NavItem to="movies">Movies</NavItem>
         </nav>
       </header>
